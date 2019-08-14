@@ -18,6 +18,8 @@ RUN npm run build
 # the previous phase builder. 
 FROM nginx
 
+EXPOSE 80
+
 # Destination is nginx specific, contents are automatically
 # served up by nginx.
 
@@ -25,4 +27,6 @@ COPY --from=builder /app/build /usr/share/nginx/html
 
 # Don't need to start up nginx as that is the defualt command
 # for the nginx container.
+
+
 
