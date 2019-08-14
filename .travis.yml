@@ -1,3 +1,4 @@
+language: generic
 sudo: required
 serviced:
   - docker
@@ -6,4 +7,4 @@ before_install:
   - docker build -t paulh98/dockerUdemy -f Dockerfile.dev .
 
 script:
-  - docker run paulh98/dockerUdemy npm run test -- --coverage
+  - docker run -e CI=true paulh98/dockerUdemy npm run test
