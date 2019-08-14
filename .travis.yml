@@ -4,7 +4,7 @@ serviced:
   - docker
 
 before_install:
-  - docker build -t paulh98/dockerUdemy -f Dockerfile.dev .
+  - docker build -t paulh98/docker-udemy -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true paulh98/dockerUdemy npm run test
+  - docker run -e CI=true paulh98/docker-udemy npm run test
